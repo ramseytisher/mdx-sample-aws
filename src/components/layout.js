@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Grommet } from "grommet"
 
 import Header from "./header"
 import "./layout.css"
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Grommet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
+        <h2>You are logged: </h2>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
@@ -41,7 +43,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </Grommet>
   )
 }
 
